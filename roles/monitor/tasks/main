@@ -1,0 +1,6 @@
+---
+- name: Install Monitoring tools
+  apt:
+    pkg:
+    - bmon
+  become: true
