@@ -1,6 +1,9 @@
 ---
-- name: Install Monitoring tools
+- name: Monitoring tools
   apt:
     pkg:
     - bmon
+    - iftop
+    - slurm
+    - tcptrack
   become: true
