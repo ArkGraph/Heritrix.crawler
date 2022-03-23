@@ -1,8 +1,6 @@
 # Wiki
 https://github.com/internetarchive/heritrix3/wiki/Credentials
 
--|https://github-wiki-see.page/m/internetarchive/heritrix3/wiki/Credentials
-
 # Guide
 https://contentanalytics.digital.accenture.com/display/aspire40/Using+a+Custom+Heritrix+Configuration+File
 
