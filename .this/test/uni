@@ -1,6 +1,6 @@
 ---
-- hosts: test
+- hosts: local
   gather_facts: yes
 
   roles:
-  - role: test
+  - role: install

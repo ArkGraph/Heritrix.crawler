@@ -1,0 +1,19 @@
+---
+- name: Install prereqs
+  apt:
+    pkg:
+    - openjdk-11-jdk
+    - openjdk-11-jre
+  become: true
+
+- shell: "echo $USER"
+  register: whoami
+
+- name: debug
+  debug:
+    msg: "whoami {{whoami.stdout}}"
+
+- name: Download Heretrix
+  get_url:
+    url: "https://github.com/internetarchive/heritrix3/archive/refs/tags/{{release_tag}}.tar.gz"
+    dest: "/home/{{whoami.stdout}}/Downloads/"
