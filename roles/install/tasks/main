@@ -6,12 +6,10 @@
     - openjdk-11-jre
   become: true
 
-- shell: "echo $USER"
-  register: whoami
-
-- name: debug
-  debug:
-    msg: "whoami {{whoami.stdout}}"
+- name: Create a directory
+  ansible.builtin.file:
+    path: "/home/{{whoami.stdout}}/uni"
+    state: directory
 
 - name: Create a directory
   ansible.builtin.file:
