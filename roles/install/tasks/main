@@ -13,7 +13,20 @@
   debug:
     msg: "whoami {{whoami.stdout}}"
 
-- name: Download Heretrix
-  get_url:
-    url: "https://github.com/internetarchive/heritrix3/archive/refs/tags/{{release_tag}}.tar.gz"
-    dest: "/home/{{whoami.stdout}}/Downloads/"
+- name: Create a directory
+  ansible.builtin.file:
+    path: "/home/{{whoami.stdout}}/uni"
+    state: directory
+
+# - name: Download Heretrix
+#   get_url:
+#     url: "https://github.com/internetarchive/heritrix3/archive/refs/tags/{{release_tag}}.tar.gz"
+#     dest: "/home/{{whoami.stdout}}/Downloads"
+# src: "/home/{{whoami.stdout}}/Downloads/heritrix3-{{release_tag}}.tar.gz"
+
+    
+- name: Download Heretrix & Extract
+  ansible.builtin.unarchive:
+    src: "https://github.com/internetarchive/heritrix3/archive/refs/tags/{{release_tag}}.tar.gz"
+    dest: "/home/{{whoami.stdout}}/uni/"
+    remote_src: yes
