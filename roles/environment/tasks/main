@@ -1,0 +1,8 @@
+---
+- name: Environment Variables
+  blockinfile:
+    path: "/home/{{whoami.stdout}}/.profile"
+    block: |
+      export JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64
+      export HERITRIX_HOME=/home/{{whoami.stdout}}/uni/heritrix-{{release_tag}}
+      export JAVA_OPTS=-Xmx1024M

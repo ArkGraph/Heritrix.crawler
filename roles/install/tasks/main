@@ -18,15 +18,13 @@
     path: "/home/{{whoami.stdout}}/uni"
     state: directory
 
-# - name: Download Heretrix
-#   get_url:
-#     url: "https://github.com/internetarchive/heritrix3/archive/refs/tags/{{release_tag}}.tar.gz"
-#     dest: "/home/{{whoami.stdout}}/Downloads"
-# src: "/home/{{whoami.stdout}}/Downloads/heritrix3-{{release_tag}}.tar.gz"
-
-    
-- name: Download Heretrix & Extract
+- name: Download & Extract Heretrix
   ansible.builtin.unarchive:
-    src: "https://github.com/internetarchive/heritrix3/archive/refs/tags/{{release_tag}}.tar.gz"
+    src: "https://repo1.maven.org/maven2/org/archive/heritrix/heritrix/{{release_tag}}/heritrix-{{release_tag}}-dist.zip"
     dest: "/home/{{whoami.stdout}}/uni/"
     remote_src: yes
+
+- name: Set execute permission on the Heritirix startup file
+  ansible.builtin.file:
+    path: "/home/{{whoami.stdout}}/uni/heritrix-{{release_tag}}/bin/heritrix"
+    mode: '0755'
