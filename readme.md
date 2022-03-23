@@ -1,2 +1,4 @@
 # Heritrix.crawler
-https://github.com/internetarchive/heritrix3
+source: https://github.com/internetarchive/heritrix3
+
+wiki: https://en.wikipedia.org/wiki/Heritrix
