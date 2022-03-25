@@ -1,0 +1,40 @@
+<bean id="scope" class="org.archive.modules.deciderules.DecideRuleSequence">
+ <property name="rules">
+  <list>
+   <!-- Stay on site -->
+   <!-- Begin by REJECTing all... -->
+   <bean class="org.archive.modules.deciderules.RejectDecideRule" />
+
+   <bean class="org.archive.modules.deciderules.ContentTypeNotMatchesRegexDecideRule">
+    <property name="decision" value="ACCEPT"/>
+    <property name="regex" value="(?i)html|wml"/>
+   </bean>
+   <bean class="org.archive.modules.deciderules.surt.SurtPrefixedDecideRule">
+    <property name="decision" value="ACCEPT"/>
+    <property name="surtsSource">
+     <bean class="org.archive.spring.ConfigString">
+      <property name="value">
+       <value>
+        http://(org,yoursite,
+       </value>
+      </property>
+     </bean>
+    </property>
+   </bean>
+   <bean class="org.archive.modules.deciderules.surt.NotSurtPrefixedDecideRule">
+    <property name="decision" value="REJECT"/>
+    <property name="alsoCheckVia" value="true"/>
+    <property name="surtsSource">
+     <bean class="org.archive.spring.ConfigString">
+      <property name="value">
+       <value>
+        http://(org,yoursite,
+       </value>
+      </property>
+     </bean>
+    </property>
+   </bean>
+   <!-- Stay on site -->
+  </list>
+ </property>
+</bean>
