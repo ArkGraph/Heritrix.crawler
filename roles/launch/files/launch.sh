@@ -1,1 +1,1 @@
-$HERITRIX_HOME/bin/heritrix -a admin:admin
+$HERITRIX_HOME/bin/heritrix -a u:u
