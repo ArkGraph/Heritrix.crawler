@@ -1,4 +1,4 @@
-SURT
+# SURT
 SURT stands for Sort-friendly URI Reordering Transform, and is a transformation applied to URIs which makes their left-to-right representation better match the natural hierarchy of domain names.
 
 A URI <scheme://domain.tld/path?query> has SURT form <scheme://(tld,domain,)/path?query>.
@@ -9,7 +9,7 @@ SURT form URIs are typically not used to specify exact URIs for fetching. Rather
 
 Most importantly, a SURT form URI, or a truncated version of a SURT form URI, can be used as a SURT prefix. A SURT prefix will often correspond to all URIs within a common 'area' of interest for crawling. For example, the prefix <http://(is,> will be shared by all URIs in the '.is' top-level domain.
 
-SURT prefix
+# SURT prefix
 A URI in SURT form, especially if truncated, may be of use as a "SURT prefix", a shared prefix string of all SURT form URIs in the same 'area' of interest for web crawling.
 
 For example, the prefix <http://(is,> will be shared by all SURT form URIs in the '.is' top-level domain. The prefix <http://(org,archive,www,)/movies> (which is also a valid full SURT form URI) will be shared by all URIs at www.archive.org with a path beginning '/movies'.
