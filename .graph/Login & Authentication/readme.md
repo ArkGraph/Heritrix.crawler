@@ -1,3 +1,6 @@
+# Example
+https://stackoverflow.com/questions/17756520/use-of-heritrixs-htmlformcredential-and-credentialstore
+
 # Wiki
 https://github.com/internetarchive/heritrix3/wiki/Credentials
 
