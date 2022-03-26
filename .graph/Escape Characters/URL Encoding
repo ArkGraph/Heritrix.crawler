@@ -1,0 +1,4 @@
+https://stackoverflow.com/questions/1328538/how-do-i-escape-ampersands-in-xml-so-they-are-rendered-as-entities-in-html
+
+for:	use:
+&	%26
