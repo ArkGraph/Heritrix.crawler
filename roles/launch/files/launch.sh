@@ -1,3 +1,2 @@
-$HERITRIX_HOME/bin/heritrix -a u:u -b /
+$HERITRIX_HOME/bin/heritrix -a u:u -b / & xdg-open https://localhost:8443/engine
 #user:pass
-xdg-open https://localhost:8443/engine
