@@ -3,6 +3,7 @@ Enable FINEST logging on the class org.archive.crawler.deciderules.DecideRuleSeq
 
 `org.archive.modules.deciderules.DecideRuleSequence.level = FINEST`
 in conjunction with the -Dsysprop VM argument,
+[- doc](https://heritrix.readthedocs.io/en/latest/configuring-jobs.html#deciderulesequence-logging)
 
 
 # Discussion
